@@ -1,16 +1,17 @@
 export function Footer() {
   const $footer = document.createElement("footer");
-  
   const $styles = document.getElementById("dynamic-styles-footer");
+  const anio = new Date().getFullYear();
   
   $styles.innerHTML = `
 
     .footer-container {
       display: flex;
+      position:absolute;
       flex-direction: column;
       align-items: center;
       background-color: #51a6f5;
-      box-shadow: 0 -4px 15px blue;
+      box-shadow: 0 -1px 5px blue;
       padding: 0.5rem;
       bottom:0 ;
       width: 100%;
@@ -38,9 +39,12 @@ export function Footer() {
           <a href="#"><img src="./app/assets/icons8-github.svg"/></a>
         </div>
         <h3 class="footer-copyright">
-          Copyright &copy; 2022
+          Copyright &copy; ${anio}
           Alexander Troncoso
         </h3>
+        <script>
+            document.write(new Date().getFullYear());
+          </script>
       </section>
   `;
 
